@@ -1,0 +1,61 @@
+<!-- public/index.html -->
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+ 
+    <title>RD远程web</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+	<script type="text/javascript" src="/js/mstsc.js"></script>
+	<script type="text/javascript" src="/js/keyboard.js"></script>
+	<script type="text/javascript" src="/js/rle.js"></script>
+	<script type="text/javascript" src="/js/client.js"></script>
+	<script type="text/javascript" src="/js/canvas.js"></script>
+    <script language="javascript">
+    var client = null;
+    
+    function load (canvas) {
+    	client = Mstsc.client.create(Mstsc.$(canvas));
+    } 
+    
+	function connect (ip, domain, username, password) {
+		Mstsc.$("main").style.display = 'none';
+		var canvas = Mstsc.$("myCanvas");
+		canvas.style.display = 'inline';
+		canvas.width = window.innerWidth;
+		canvas.height = window.innerHeight;
+		client.connect(ip, domain, username, password, function (err) {
+			Mstsc.$("myCanvas").style.display = 'none';
+			Mstsc.$("main").style.display = 'inline';
+		});
+	}
+</script>
+  </head>
+
+  <body onload='load("myCanvas")'>
+
+    <div id="main" class="container">
+		<form class="form-signin"  onSubmit="connect(this.elements['inputIpAddress'].value, this.elements['inputDomain'].value, this.elements['inputUsername'].value, this.elements['inputPassword'].value);return false;">
+</head>
+<body>
+    <div class="login-container">
+        <h2>RD远程桌面</h2>
+         <form id="loginForm">
+        
+			<label for="inputIpAddress" class="sr-only">IP地址</label>
+			<input type="text" id="inputIpAddress" class="form-control" placeholder="IP地址" required autofocus>
+			<label for="inputDomain" class="sr-only">域</label>
+			<input type="text" id="inputDomain" class="form-control" placeholder="域">
+			<label for="inputUsername" class="sr-only">用户名</label>
+			<input type="text" id="inputUsername" class="form-control" placeholder="用户名">
+			<label for="inputPassword" class="sr-only">密码</label>
+			<input type="password" id="inputPassword" class="form-control" placeholder="密码">
+			
+			<button class="btn btn-lg btn-primary btn-block" type="submit" style="background-color: #34A6FF; border-color: #34A6FF">连接</button>
+   </form>
+    </div> <!-- /container -->
+    <canvas id="myCanvas" style="display:none"></canvas>
+</body>
+</html>
