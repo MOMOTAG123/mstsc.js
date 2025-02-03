@@ -41,7 +41,7 @@ node server.js
 ### 后端
 后端应用程序使用 nodejs、express 和 socket.io 作为 Web 服务器。后端的主要目标是作为 Web 浏览器和终端服务器之间的代理。它使用 [**node-rdpjs**](https://github.com/citronneur/node-rdpjs) 作为其 RDP 客户端。
 
-#mstsc.js (RD web client)
+## mstsc.js (RD web client)
 
 **Mstsc.js** is a pure javascript Microsoft RDP (Remote Desktop Client) client using nodejs, [**node-rdpjs**](https://github.com/citronneur/node-rdpjs) and socket.io. It allows you to connect to any terminal server compatible application, through a web browser (optimized for firefox, but compatible with chrome and internet explorer 11 too).
 
