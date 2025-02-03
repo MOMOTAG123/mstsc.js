@@ -27,7 +27,7 @@ npm install mstsc.js
 安装最新的开发提交 : 
 
 ```
-git clone https://github.com/citronneur/mstsc.js
+git clone https://github.com/momotag123/mstsc.js
 cd mstsc.js
 npm install
 node server.js
