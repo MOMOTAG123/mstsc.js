@@ -32,6 +32,9 @@ cd mstsc.js
 npm install
 node server.js
 ```
+##web
+127.0.0.1:9250
+
 
 ## 他是如何工作的 ?
 
