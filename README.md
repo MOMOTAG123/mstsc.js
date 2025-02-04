@@ -5,8 +5,8 @@
 
 **Mstsc.js** 是一个使用 nodejs、[**node-rdpjs**](https://github.com/citronneur/node-rdpjs) 和 socket.io 构建的纯 JavaScript 实现的微软远程桌面协议（RDP）客户端。它允许用户通过网页浏览器（优化支持 Firefox，但也兼容 Chrome 和 Internet Explorer 11）连接到任何支持终端服务器的应用。
 
-<img src='/MOMOTAG123/mstsc.js/edit/main/img/mstsc.js.connect.png' width=200/>
-<img src='/MOMOTAG123/mstsc.js/edit/main/img/mstsc.js.explorer.png' width=200/>
+<img src='/img/mstsc.js.connect.png' width=200/>
+<img src='/img/mstsc.js.explorer.png' width=200/>
 
 ## Cozy-Cloud
 
@@ -32,9 +32,11 @@ cd mstsc.js
 npm install
 node server.js
 ```
-##web
+## 访问web
+输入node server.js后会不动
+这时候直接访问:
 127.0.0.1:9250
-
+就可以了
 
 ## 他是如何工作的 ?
 
